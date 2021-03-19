@@ -1,0 +1,103 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - AEFI
+  - AEFIs
+  - symptoms
+  - comorbidities
+  - medicare
+  - vaccination 
+
+responses:
+  utter_greet:
+  - text: "Hi welcome to vaccine1st how may I help you?"
+    buttons: 
+        - title: "medicare"
+          payload: "medicare"
+        - title: "schedule vaccination"
+          payload: "schedule vaccination"
+        - title: "AEFIs"
+          payload: "AEFI"
+        - title: "vaccination history"
+          payload: "vaccination history"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_schedule_vaccination:
+  - text: "Follow the below link to schedule your vaccination"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_schedule_vaccination_comorbidity:
+  - text: "Follow the below link to schedule your vaccination. Since you have pre exsisting medical conditions look out for AEFI symptoms"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_vaccination_history:
+  - text: "Follow the below link to see your vaccination history"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+ 
+  utter_comorbidities:
+  - text: "Do you have any of the following health conditions"
+    buttons: 
+        - title: "Diabetes"
+          payload: "diabetes"
+        - title: "Hypertension"
+          payload: "hypertension"
+        - title: "Lung disease"
+          payload: "Lung disease"
+        - title: "Heart disease"
+          payload: "Heart disease"
+
+  utter_symptoms:
+  - text: "Do you have any of the following symptoms"
+    buttons: 
+        - title: "cough"
+          payload: "cough"
+        - title: "fever"
+          payload: "fever"
+        - title: "breathing"
+          payload: "breathing"
+        - title: "smell and taste"
+          payload: "smell and taste"
+
+  utter_get_checkup:
+  - text: "You are at a hogh risk of covid go to the nearest facility for a check up"
+
+  utter_risk:
+  - text: "You are at a low risk of covid "
+
+  utter_safe:
+  - text: "You are currently safe take the vaccination soon for better use"
+
+  utter_AEFI:
+  - text: "Your concerns have been recorded and sent to the vaccination center"
+
+  utter_concern:
+  - text: "Contact us or the nearest hospital if the symptoms worsen"
+
+  utter_help:
+  - text: "Do you need help with any of the things below"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

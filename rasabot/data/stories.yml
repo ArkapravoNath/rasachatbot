@@ -1,0 +1,129 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: vaccination path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: vaccination
+  - action: utter_comorbidities
+  - intent: deny
+  - action: utter_schedule_vaccination
+  - intent: affirm
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: vaccination path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: vaccination
+  - action: utter_comorbidities
+  - intent: comorbidities
+  - action: utter_schedule_vaccination_comorbidity
+  - intent: affirm
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: medicare path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: medicare
+  - action: utter_comorbidities
+  - intent: comorbidities
+  - action: utter_symptoms
+  - intent: symptoms
+  - action: utter_get_checkup
+
+- story: medicare path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: medicare
+  - action: utter_comorbidities
+  - intent: deny
+  - action: utter_symptoms
+  - intent: symptoms
+  - action: utter_risk
+
+- story: medicare path 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: medicare
+  - action: utter_comorbidities
+  - intent: deny
+  - action: utter_symptoms
+  - intent: deny
+  - action: utter_safe
+
+- story: medicare path 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: medicare
+  - action: utter_comorbidities
+  - intent: comorbidities
+  - action: utter_symptoms
+  - intent: deny
+  - action: utter_safe
+
+- story: AEFI1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: AEFIs
+  - action: utter_symptoms
+  - intent: AEFI
+  - action: utter_AEFI
+  - intent: affirm
+  - action: utter_concern 
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: AEFI2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: AEFIs
+  - action: utter_symptoms
+  - intent: deny
+  - action: utter_concern
+  - intent: affirm
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
